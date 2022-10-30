@@ -19,19 +19,19 @@ app.get("/", function(req, res) {
 app.post("/",function(req,res){
   // const ema = req.body.email1;
   const  nme = req.body.email2;
-  const sub=req.body.subject;
-  const txt=req.body.Message;
   const mobile = req.body.Mobile;
+  const sub=req.body.subject;
+  const txt=req.body.message;
   const transporter = nodemailer.createTransport({
-    service: 'hotmail',
+    service: 'gmail',
     auth: {  
-      user: "divyathakur20@outlook.com",
-      pass: "Divya@99"
+      user: "2divyathakur002@gmail.com",
+      pass: "jpbnnetshoiumqta"
     }
   })
   var myEmails = [nme]
   const options = {
-      from:"divyathakur20@outlook.com",
+      from:"2divyathakur002@gmail.com",
       to:myEmails,
       subject:sub,
       text:txt
@@ -44,6 +44,7 @@ app.post("/",function(req,res){
       console.log("Sent "+ info.response);
   })
 
+  console.log(txt);
   
 
   const accountSid = process.env.TWILIO_ACCOUNT_SID;
